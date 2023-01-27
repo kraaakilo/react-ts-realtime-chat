@@ -1,0 +1,205 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.username-modal{
+    inset: 50% auto auto 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+}
+*::-webkit-scrollbar {
+    width: 5px;
+    background: #F5F6F7;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+    border-radius: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+}
+
+.side-chats {
+    height: 600px;
+    width: 400px;
+    padding: 0 45px;
+    overflow: hidden scroll;
+
+    .input-container {
+        height: 40px;
+        margin-top: 20px;
+        position: relative;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+
+        input, input:focus {
+            position: absolute;
+            outline: none;
+            width: 100%;
+            height: 40px;
+            border: none;
+        }
+    }
+
+    img {
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+    }
+
+
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+
+        li.chat-element {
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            place-items: center;
+            position: relative;
+
+            .chat-details {
+                display: inline-block;
+                margin-left: 8px;
+
+                p, .sender-name {
+                    margin: 5px 0;
+                }
+
+                .sender-name {
+                    color: #3B71CA;
+                }
+
+                .date {
+                    font-weight: lighter;
+                }
+            }
+
+            &:after {
+                content: "";
+                height: 1px;
+                width: 100%;
+                background: #394242;
+                display: block;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.chats {
+    position: relative;
+    padding: 0 25px;
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    width: 100%;
+
+    .messages {
+        overflow: hidden scroll;
+        height: 525px;
+    }
+
+    img[alt="avatar"] {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .me {
+        display: flex;
+        justify-content: end;
+
+        .chat-content {
+            background: #3B71CA;
+            color: white;
+            margin-right: 0;
+        }
+    }
+
+    .not-me {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+
+        .chat-content {
+            background: #F5F6F7;
+            margin-left: 0;
+        }
+    }
+
+    .chat-content {
+        max-width: 350px;
+        margin: 15px;
+        padding: 10px 25px;
+        border-radius: 15px;
+        color: black;
+    }
+
+    .send-message {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px;
+        padding: 5px;
+        transform: translate(-50%, 0);
+        background: white;
+        border-radius: 10px;
+
+        svg {
+            width: 20px;
+        }
+
+        input, input:focus {
+            outline: none;
+            width: 90%;
+            font-size: 16px;
+            height: 35px;
+            border: none;
+        }
+    }
+}
+
+
+.active-users {
+    .active-user div {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        .username::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            width: 7px;
+            height: 8px;
+            background: green;
+            border-radius: 100%;
+        }
+    }
+}

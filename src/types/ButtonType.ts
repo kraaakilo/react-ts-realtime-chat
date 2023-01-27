@@ -1,0 +1,1 @@
+export type ButtonType = "btn-primary" | "btn-danger";
